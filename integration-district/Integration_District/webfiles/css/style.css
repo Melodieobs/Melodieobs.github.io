@@ -20,6 +20,7 @@ header nav {
   background-color: #345765;
 }
 header nav div {
+  padding: 0 2rem;
   max-width: 1400px;
   margin: auto;
 }
@@ -46,6 +47,7 @@ header section img {
 
 /* MAIN            */
 main {
+  margin-bottom: 5rem;
   padding: 0 2rem;
 }
 main .bloc {
@@ -53,6 +55,7 @@ main .bloc {
   display: flex;
   color: #6B5B54;
   max-width: 1400px;
+  margin-bottom: 5rem;
 }
 main .bloc .cordonnee p {
   color: #34A58A;

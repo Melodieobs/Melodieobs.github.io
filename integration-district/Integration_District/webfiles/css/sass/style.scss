@@ -16,6 +16,7 @@ header{
         max-width: 100%;
         background-color: #345765;
         div{
+            padding: 0 2rem;
             max-width: 1400px;
             margin: auto;
         ul{
@@ -43,12 +44,14 @@ header{
 }
 /* MAIN            */
 main{
+    margin-bottom: 5rem;
     padding: 0 2rem;
     .bloc{
         margin: auto;
         display: flex;
         color: #6B5B54;
         max-width: 1400px;
+        margin-bottom: 5rem;
         .cordonnee p{
             color: #34A58A ;
         }
