@@ -6,11 +6,12 @@ body{
     background-color: #F6F6F6;
 }
 header{
-    margin-bottom: 2.75rem;
+    margin-bottom: 5rem;
     h1{
-        padding: 2rem 0;
+        padding: 5rem 0 2rem 0;
         color: #34A58A;
         text-transform: uppercase;
+        font-size: 40px;
     }
     nav{
         max-width: 100%;
@@ -29,6 +30,9 @@ header{
                 color:#FFFFFF;
                 text-decoration: none;
                 padding: 2rem 1rem;
+                &:hover{
+                    text-decoration: underline;
+                }
             }
             }
         }
@@ -47,10 +51,10 @@ main{
     margin-bottom: 5rem;
     padding: 0 2rem;
     .bloc{
+        max-width: 1400px;
         margin: auto;
         display: flex;
         color: #6B5B54;
-        max-width: 1400px;
         margin-bottom: 5rem;
         .cordonnee p{
             color: #34A58A ;
@@ -59,25 +63,26 @@ main{
             width: 15px;
         }
     }
+    .carte h2, .presentation h2{
+        padding-bottom: 2rem;
+    }
     section{
             font-size: 20px;
             margin-bottom: 2rem;
             .presentation{
                 max-width: 755px ;
             }
-            .presentation, .carte{
-                margin-bottom: 2rem;
-            }
             .para, .pre{
                 max-width: 750px;
-                padding: 1rem 2rem 0rem 0;
+                padding: 1rem 6rem 0 0;
                 margin-bottom: 0.50rem;
             }
             .pre{
                 white-space: pre-line;
             }
             iframe{
-                height: 95%;
+                border: 10px #FFFFFF solid;
+                height: 90%;
                 width: 547px;  
             }
     }
@@ -90,8 +95,9 @@ main{
         .titrebouton{
             display: flex;
             justify-content: space-between;
-            padding: 1rem;
             align-items: baseline;
+            padding: 1rem 2rem;
+            color: #6B5B54;
         }
         a{
             background-color: #34A58A;
@@ -127,23 +133,35 @@ main{
     article{
         padding: 2rem;
         max-width: 1530px;
-        width: 750px;
+        width: 50%;
         margin: auto;
         margin-top: 0.25rem;
         .texte{
+            position: relative;
             height: 225px;
             overflow: hidden;
+            &::after{
+                position: absolute;
+                content: "";
+                width: 100%;
+                height: 50%;
+                background: linear-gradient(180deg, rgba(255,255,255,0) -30%, rgba(255,255,255,1) 30%);
+                bottom: 0;
+                left: 0;
+            }
         }
         a{
             text-decoration: none;
             color: #34A58A;
             text-transform: uppercase;
             margin-bottom: 2rem;
+            padding: 2rem 0;
                 &::after{
                     content: "+";
                     font-family: sans-serif;
+                    font-size: 2rem;
                     color: #34A58A;
-                    padding: 0.5rem 0.7rem;
+                    padding: 0.3rem 0.7rem;
                     margin-left: 0.5rem;
                     border-radius: 100%;
                     background-color: #FFFFFF;
@@ -151,7 +169,8 @@ main{
                 }
             }
             img{
-                height: 300px;
+                max-width: 100%;
+                object-fit: cover;
         }
     }
         .droite{
@@ -184,6 +203,9 @@ main{
                     list-style: none;
                     a{
                         text-decoration: none;
+                        &:hover{
+                            text-decoration: underline;
+                        }
                     }
                     img{
                         filter: brightness(0) invert(100%);
@@ -266,6 +288,11 @@ main{
                     width: 90%;
                     font-size: 15px;
                     margin-bottom: 2rem;
+                    .texte{
+                        &:after{
+                            display: none;
+                        }
+                    }
             }
             .cordonnee{
                 text-align: center;
