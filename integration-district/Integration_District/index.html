@@ -1,189 +1,216 @@
 <!DOCTYPE html>
-<html lang="fr">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Integration de maquette du district">
-    <link rel="stylesheet" href="./webfiles/css/style.css">
-    <title>District Aisne de Billard</title>
-</head>
-
-<body>
-    <!-- Début du header -->
-    <header>
-        <nav>
-            <div>
-                <ul>
-                    <li><a href="#" title="Redirection vers ...">Accueil</a></li>
-                    <li><a href="#" title="Redirection vers ...">Individuelles</a></li>
-                    <li><a href="#" title="Redirection vers ...">Equipes</a></li>
-                    <li><a href="#" title="Redirection vers ...">Clubs</a></li>
-                    <li><a href="#" title="Redirection vers ...">Documents</a></li>
-                    <li><a href="#" title="Redirection vers ...">Contact</a></li>
-                </ul>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta nema="description" content="*Integration du qovery">
+        <link rel="stylesheet" href="./webfiles/css/style.css">
+        <link rel="icon" href="./src/img/Logo.png">
+        <title>Qovery</title>
+    </head>
+    <body>
+        <header>
+            <div class="entete">
+                <img src="./src/img/LogotypelogoQ.png" alt="Logo de Qovery">
+                <section>
+                    <div class="inline">
+                        <div class="ensemble">
+                            <h1>Qovery Engine</h1>
+                            <ul>
+                                <li><img src="./src/img/Vectorgithublogo.png" alt="Logo github">Star</li>
+                                <li>12</li>
+                            </ul>
+                        </div>
+                        <p>Abstraction layer to deplay microservices
+                            applications on any Cloud provider.
+                        </p>
+                        <p>
+                            Qovery Engine is an open-source abstraction layer product
+                            that turns easy apps deployment on AWS, GCP, Azure and
+                            others Cloud providers.
+                        </p>
+                            <div class="bouton">
+                                <a href="#" title="Redirection vers le github de Qovery"><img src="./src/img/Vectorgithublogo.png" alt="Logo de Github">See on Github</a>
+                                <a href="#" title="Redirection vers le discord de Qovery"><img src="./src/img/Vectordiscord.png" alt="Logo de discord">Join us on Discord</a>
+                            </div>
+                    </div>
+                        <img src="./src/img/Group 225 1nav.png" alt="Illustration de superposition d'élémernt">
+                    </section>
             </div>
-        </nav>
-        <section>
-            <h1>Club de Guignicourt</h1>
-            <img src="./src/img/phototable.png" alt="Photo d'une salle avec des tebles de billard.">
-        </section>
+
     </header>
-    <!-- Fin du header -->
 
-    <!-- Début de la section principal -->
     <main>
-        <div class="bloc">
-            <div>
-                <section class="presentation">
-                    <h2>Présentation</h2>
-                    <p class="para">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non et tempus duis viverra venenatis integer.
-                        Lobortis ac ac cursus ultrices facilisis vitae sodales turpis. Ut fermentum quisque suspendisse amet,
-                        volutpat vulputate.
-                    </p>
-                    <p class="para">
-                        Vulputate augue porta in adipiscing felis risus diam.
-                        Nam velit tellus dictum arcu ultricies sapien massa. Urna, egestas neque
-                        fermentum maecenas vulputate arcu urna aenean etiam. Semper sem vitae 
-                        quisque lobortis eget aenean. Vitae faucibus ut purus commodo. At non velit a facilisis eget in elit
-                        posuere.
-                    </p>
-                </section>
-                <section class="cordonnee" >
-                    <h2>Coordonées</h2>
-                    <p class="pre">
-                        <img src="./src/img/Vectorlieux.png" alt="Logo de lieux"> 9 rue Bonnot
-                        02000&nbsp;-&nbsp;Laon
-                    </p>
-                    <p class="para">
-                        <img src="./src/img/Vectorlettre.png" alt="Logo de lettre"> billard.guignicourt@orange.fr
-                    </p>
-                    <p class="para">
-                        <img src="./src/img/Vectortéléphone.png" alt="Logo de téléphone"> 09 71 21 58 40
-                    </p>
+        <article class="work">
+            <h2>How does it work?</h2> 
+            <p>
+                Qovery Engine is an open-source abstraction layer product that turns easy apps deployment on AWS, GCP, Azure and others Cloud providers. The Qovery Engine is coded in Rust and takes advantage of Terraform, Helm, Kubectl, Docker to manage resources.
+            </p>
+            <img src="./src/img/Group 209 1cloud.png" alt="">
+        </article>
+
+        <section class="ensemble2">
+            <div class="usage">
+                <h2>Usage</h2>
+                <p>
+                    Initialize EKS (AWS Kubernetes) and ECR (AWS container registry) on AWS
+                </p>
             </div>
+            <img src="./src/img/bgarrier plan.png" alt="arriere-plan">
+            <div class="code">
+            <span>Rust</span>
+
+                <code>let engine = Engine::new(
+                    context, // parameters
+                    local_docker, // initialize Docker as a Build Platform
+                    ecr, // initialize Elastic Container Registry
+                    aws, // initialize AWS account
+                    cloudflare, // initialize Cloudflare as DNS Nameservers
+                );
+                
+                let session = match engine.session() {
+                    Ok(session) => session, // get the session
+                    Err(config_error) => panic!("configuration error {:?}", config_error),
+                };
+                
+                let mut tx = session.transaction();
+                
+                // create EKS (AWS managed Kubernetes cluster)
+                tx.create_kubernetes(&eks);
+                
+                // create the infrastructure and wait for the result
+                match tx.commit() { 
+                    TransactionResult::Ok => println!("OK"),
+                    TransactionResult::Rollback(commit_err) => println!("ERROR but rollback OK"), 
+                    TransactionResult::UnrecoverableError(commit_err, rollback_err) => println!("FATAL ERROR")
+                };</code>
+            </div>
+            <div class="bouton">
+                <a href="#" title="Redirection vers le github de Qovery"><img src="./src/img/Vectorgithublogo.png" alt="Logo de Github">See on Github</a>
+                <a href="#" title="Redirection vers le discord de Qovery"><img src="./src/img/Vectordiscord.png" alt="Logo de discord">Join us on Discord</a>
+            </div>
+        </section>
+
+        <section class="art1">
+            <article class="droite">
+                <img src="./src/img/Group 247deploy.png" alt="">
+                <h3>Deploy real world applications</h3>
+                <p>
+                    Qovery Engine empowers you to deploy complex applications, such as a backend, a frontend, and a database in a very simple way.  
+                </p>
+                <p>
+                    Servers, networking, security, all is done by the Engine for you.
+                </p>
+                <a href="#" title="" target="_blank">see more</a>
+            </article>
+
+            <article class="droite">
+                <img src="./src/img/Frame 199 1resiliency.png" alt="">
+                <h3>Resiliency is key</h3>
+                <p>
+                    Qovery Engine knows when something goes wrong on the deployment of your applications. Qovery Engine is built with resiliency in mind.
+                </p>
+                <p>
+                    A transactional engine inspired by what is provided into ACID databases has been developed at the heart of the product to rollback on a consistent and working application version when something goes wrong.
+                </p>
+                <a href="#" title="" target="_blank">see more</a>
+            </article>
+        </section>
+
+            <section class="art2">
+                <article class="gauche">
+                    <img src="./src/img/On Top of Tools 1ontop.png" alt="">
+                    <h3>On top of the best tools</h3>
+                    <p>
+                        Qovery Engine does not reinvent the wheel. It takes advantage of the best tools in the Cloud industry, such as Kubernetes, Terraform, and Helm to manage the deployment of the infrastructure and your applications
+                    </p>
+                    <p>
+                        Servers, networking, security, all is done by the Engine for you.
+                    </p>
+                    <a href="#" title="" target="_blank">see more</a>
+                </article>
+                <article class="gauche">
+                    <img src="./src/img/Policies 2extensible.png" alt="">
+                    <h3>Extensible</h3>
+                    <p>
+                        Qovery Engine is built to be highly extensible. Adding the support of a Cloud provider or a Continuous Integration platform is as simple as implementing a simple programmatic interface.
+                    </p>
+                    <a href="#" title="" target="_blank">see more</a>
+                </article>
             </section>
-            <section class="carte">
-                <h2>Carte</h2>
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1293.758128970409!2d3.6267133!3d49.56915!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e84b468bb71609%3A0x9dffcbc1cf0bfb18!2s9%20Rue%20Bonnot%2C%2002000%20Laon!5e0!3m2!1sen!2sfr!4v1655727260523!5m2!1sen!2sfr"
-                    loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <h3 class="leh3">They use Qovery Engine</h3>
+    </main>
+    <footer>
+        <div class="bandenoir"></div>
+        <div class="ensemble3">
+            <section class="texte">
+                <div>
+                    <p><img src="./src/img/qovery-logo.svg" alt="Logo de Qovery">Qovery</p>
+                    <p>
+                        Qovery combines the power of kubernetes,
+                        the reliability of AWS, and the simplicity of
+                        Heroku to deploy your apps.
+                    </p>
+                    <div class="img">
+                        <img src="./src/img/Vectorgithublogo.png" alt="Logo github">
+                        <img src="./src/img/38669.png" alt="Logo linkedin">
+                        <img src="./src/img/Twitter-logo.svg.png" alt="logo twitter">
+                        <img src="./src/img/Vectordiscord.png" alt="Logo discord">
+                    </div>
+                    <div class="ensemble">
+                        <ul>
+                            <li><img src="./src/img/Vectorgithublogo.png" alt="Logo github">Star</li>
+                            <li>3,262</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section class="lien">
+                <div>
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="#" title="">Documentation</a></li>
+                        <li><a href="#" title="">Guides</a></li>
+                        <li><a href="#" title="">Tutorials</a></li>
+                        <li><a href="#" title="">Engineering</a></li>
+                        <li><a href="#" title="">Pricing</a></li>
+                        <li><a href="#" title="">API</a></li>
+                        <li><a href="#" title="">Github</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Community</h3>
+                    <ul>
+                        <li><a href="#" title="">Discord</a></li>
+                        <li><a href="#" title="">Forum</a></li>
+                        <li><a href="#" title="">Community call</a></li>
+                        <li><a href="#" title="">Goodies</a></li>
+                        <li><a href="#" title="">Roadmap</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Qovery vs. Other</h3>
+                    <ul>
+                        <li><a href="#" title="">Heroku</a></li>
+                        <li><a href="#" title="">Netlify</a></li>
+                        <li><a href="#" title="">Terraform</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="#" title="">Blog</a></li>
+                        <li><a href="#" title="">Jobs</a></li>
+                        <li><a href="#" title="">Team</a></li>
+                        <li><a href="#" title="">Inverstors</a></li>
+                        <li><a href="#" title="">terms</a></li>
+                        <li><a href="#" title="">Contact</a></li>
+                    </ul>
+                </div>
             </section>
         </div>
-
-        <section class="top">
-            <div class="titrebouton">
-                <h2>Dernières actualités</h2>
-                <a href="#" title="Tout voir">Tout voir</a>
-            </div>
-        </section>
-        <section class="dernactua">
-
-            <article class="droite">
-                <img src="./src/img/billehautdroite.png" alt="Boule de billard">
-                <div class="arti">
-                    <h3>Convocation Cadre et Composition et Calendrier Interclubs JDS Aisne</h3>
-                    <p class="date">
-                        <datetime>Lundi, 20 septembre, 2021</datetime>
-                    </p>
-                    <p class="texte">
-                        Bonjour à tous!
-                        Les compétitions officielles sont lancées, vous trouverez ci-joint la convocation au Cadre, les
-                        compositions des équipes et le calendrier pour les Interclubs JDS de l'Aisne.
-                    </p>
-                    <div class="lien"><a href="#" title="En savoir plus">En Savoir plus</a></div>
-                </div>
-            </article>
-
-            <article class="gauche">
-                <img src="./src/img/billehautgauche.png" alt="boule de billard ranger">
-                <div class="arti">
-                    <h3>Formation CFA Noyon</h3>
-                    <p class="date">
-                        <datetime>Lundi, 20 septembre, 2021</datetime>
-                    </p>
-                    <p>
-                        Suite à une demande du Club de Noyon une formation CFA (Certificat Fédéral d'Animateur de club)
-                        sera
-                        organisée le 4 et 5 Décembre à Noyon.
-                    </p>
-                </div>
-            </article>
-        </section>
-
-        <section class="premeactua">
-            <article class="droite">
-                <img src="./src/img/billebasdroite.png" alt="Boule de billard">
-                <div class="arti">
-                    <h3>Compétitions Individuelles</h3>
-                    <p class="date">
-                        <datetime>Lundi 20 septembre, 2021</datetime>
-                    </p>
-                    <p>
-                        Début des compétitions, pensez à vous inscrire
-                    </p>
-                </div>
-            </article>
-            <article class="gauche">
-                <img src="./src/img/specialiste-billards-toulousegauche.png" alt="Un Homme qui joue au billard">
-                <div class="arti">
-                    <h3>Résultats Multidisciplines</h3>
-                    <p class="date">
-                        <datetime>Dimanche 3 octobre, 2021</datetime>
-                    </p>
-                    <p class="texte">
-                        Pour bien commencé cette nouvelle saison quoi de mieux qu'une compétition amical, 
-                        pour ce retrouver et partager de bons moments Compétition qui c'est très bien passé malgré le peu d'inscrits, 3 équipes ce qui représente 12
-                        joueurs et tous des habitués de cette compétition.
-                        Les équipes en lice pour le titre de Champion de l'Aisne par équipe Multidisciplines étaient
-                        Laon -
-                        Vaudesson - Soissons.
-                    </p>
-                    <div class="lien"><a href="#" title="En savoir plus">En Savoir plus</a></div>
-                </div>
-            </article>
-        </section>
-    </main>
-    <!-- Fin de la section principal -->
-
-    <!-- Début du footer -->
-    <footer>
-        <section>
-            <div>
-                <h3>Coordonnées du District&nbsp;:</h3>
-                <ul>
-                    <li><img src="./src/img/Vectortéléphone.png" alt="Logo téléphone"> 03 12 45 94 78</li>
-                    <li><img src="./src/img/Vectorlettre.png" alt="Logo lettre">contact@districtaisnebillard.fr</li>
-                </ul>
-                <h3>Siège social&nbsp;:</h3>
-                <ul>
-                    <li><img src="" alt="">03 Rue d’Arlaines 02290 - Fontenoy</li>
-                </ul>
-            </div>
-            <div>
-                <h3>Instances annexes&nbsp;:</h3>
-                <ul>
-                    <li><a href="#" title="Redirecetion vers.. ">UMB</a> | <a href="#" title="Redirecetion vers.. ">CEB</a> |<a href="#" title="Redirecetion vers.. "> FFB</a> | <a href="#" title="Redirecetion vers.. ">HDF</a></li>
-                    <li>Commité <a href="#" title="Redirecetion vers.. ">59</a> | <a href="#" title="Redirecetion vers.. ">60</a> | <a href="#" title="Redirecetion vers.. ">62</a> | <a href="#" title="Redirecetion vers.. ">80</a></li>
-                </ul>
-                <h3>Juridique&nbsp;:</h3>
-                <ul>
-                    <li><a href="#" title="Redirecetion vers.. ">Mentions légales</a></li>
-                    <li><a href="#" title="Redirecetion vers.. ">Plan du site</a></li>
-                </ul>
-            </div>
-            <div class="logo">
-                <ul>
-                    <li><img src="./src/img/aisnelogo.png" alt=""></li>
-                    <li><img src="./src/img/dablogo.png" alt=""></li>
-                </ul>
-            </div>
-        </section>
-        <p>© 2021 - District Aisne de Billard | Réalisé par ...</p>
+        <p class="dernpa"> 2021 Designed by qovery | backed by <a href="#">techstars</a> | Proud silver member of <a href="#" title="" target="_blank">cncf</a> and <a href="#" title="" target="_blank">Linux foundation</a> | Qovery by birdsight - all rights reserved</p>
     </footer>
-    <!-- Fin du footer -->
 </body>
-
 </html>
