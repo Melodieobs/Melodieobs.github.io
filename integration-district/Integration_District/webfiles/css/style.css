@@ -1,6 +1,13 @@
+@font-face {
+  font-family: "Lato";
+  src: url("../../../Integration_Distric/src/typo/lato-light-webfont.woff") format("woff"), url("../../../Integration_Distric/src/typo/lato-light-webfont.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("../../../Integration_Distric/src/typo/montserrat-italic-variablefont_wght-webfont.woff") format("woff"), url("../../../Integration_Distric/src/typo/montserrat-italic-variablefont_wght-webfont.woff2") format("woff2");
+}
 * {
   margin: 0;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
 body {
@@ -11,6 +18,7 @@ header {
   margin-bottom: 5rem;
 }
 header h1 {
+  font-family: Montserrat;
   padding: 5rem 0 2rem 0;
   color: #34A58A;
   text-transform: uppercase;
@@ -33,6 +41,7 @@ header nav div li {
   display: flex;
 }
 header nav div li a {
+  font-family: Lato;
   color: #FFFFFF;
   text-decoration: none;
   padding: 2rem 1rem;
@@ -54,6 +63,13 @@ main {
   margin-bottom: 5rem;
   padding: 0 2rem;
 }
+main h2, main h3 {
+  font-family: Montserrat;
+  letter-spacing: 0.06rem;
+}
+main p {
+  font-family: lato;
+}
 main .bloc {
   max-width: 1400px;
   margin: auto;
@@ -67,7 +83,8 @@ main .bloc .cordonnee p {
 main .bloc img {
   width: 15px;
 }
-main .carte h2, main .presentation h2 {
+main .carte h2,
+main .presentation h2 {
   padding-bottom: 2rem;
 }
 main section {
@@ -77,7 +94,8 @@ main section {
 main section .presentation {
   max-width: 755px;
 }
-main section .para, main section .pre {
+main section .para,
+main section .pre {
   max-width: 750px;
   padding: 1rem 6rem 0 0;
   margin-bottom: 0.5rem;
@@ -104,6 +122,7 @@ main section iframe {
   color: #6B5B54;
 }
 .top a {
+  font-family: Montserrat;
   background-color: #34A58A;
   padding: 1rem;
   border-radius: 10px;
@@ -111,7 +130,8 @@ main section iframe {
   text-decoration: none;
 }
 
-.premeactua, .dernactua {
+.premeactua,
+.dernactua {
   background-color: #FFFFFF;
   max-width: 1600px;
   margin: auto;
@@ -119,22 +139,29 @@ main section iframe {
   justify-content: space-between;
   flex-direction: row-reverse;
 }
-.premeactua .arti, .dernactua .arti {
+.premeactua .arti,
+.dernactua .arti {
   padding: 0 1rem;
 }
-.premeactua img, .dernactua img {
+.premeactua img,
+.dernactua img {
   width: 330px;
+  height: 300px;
+  object-fit: cover;
 }
-.premeactua .lien, .dernactua .lien {
+.premeactua .lien,
+.dernactua .lien {
   display: flex;
   justify-content: flex-end;
 }
-.premeactua .date, .dernactua .date {
+.premeactua .date,
+.dernactua .date {
   padding-bottom: 2rem;
   color: #345765;
 }
 
 article {
+  position: relative;
   padding: 2rem;
   max-width: 1530px;
   width: 50%;
@@ -156,11 +183,15 @@ article .texte::after {
   left: 0;
 }
 article a {
+  font-family: Montserrat;
+  position: absolute;
   text-decoration: none;
   color: #34A58A;
   text-transform: uppercase;
   margin-bottom: 2rem;
   padding: 2rem 0;
+  bottom: 0;
+  right: 5%;
 }
 article a::after {
   content: "+";
@@ -207,9 +238,12 @@ footer section h3, footer section li, footer section a {
 }
 footer section h3 {
   text-decoration: underline;
+  font-family: Montserrat;
+  letter-spacing: 0.06rem;
 }
 footer section li {
   list-style: none;
+  font-family: Lato;
 }
 footer section li a {
   text-decoration: none;
@@ -226,6 +260,7 @@ footer section .logo img {
   width: 120px;
 }
 footer p {
+  font-family: Montserrat;
   text-align: center;
   color: #FFFFFF;
   border-top: #FFFFFF solid 2px;
@@ -268,18 +303,26 @@ footer p {
     width: 700px;
     max-width: 100%;
   }
-  main .premeactua, main .dernactua {
+  main .premeactua,
+main .dernactua {
     flex-direction: column;
     max-width: 850px;
   }
-  main .premeactua .droite, main .premeactua .gauche, main .dernactua .droite, main .dernactua .gauche {
+  main .premeactua .droite,
+main .premeactua .gauche,
+main .dernactua .droite,
+main .dernactua .gauche {
     padding: 0 1rem;
     flex-direction: column;
   }
-  main .premeactua .droite .arti, main .premeactua .gauche .arti, main .dernactua .droite .arti, main .dernactua .gauche .arti {
+  main .premeactua .droite .arti,
+main .premeactua .gauche .arti,
+main .dernactua .droite .arti,
+main .dernactua .gauche .arti {
     width: 90%;
   }
-  main .premeactua img, main .dernactua img {
+  main .premeactua img,
+main .dernactua img {
     object-fit: cover;
     width: 100%;
   }
@@ -301,10 +344,24 @@ footer p {
   footer section ul {
     padding: 2rem 0;
   }
-  footer section li, footer section h3 {
+  footer section li,
+footer section h3 {
     text-align: center;
     padding: 0.5rem;
   }
+}
+@media screen and (max-width: 400px) {
+  header section h1 {
+    font-size: 30px;
+  }
+}
+main article a {
+  top: 90%;
+}
+main .top .titrebouton {
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 /*# sourceMappingURL=style.css.map */
