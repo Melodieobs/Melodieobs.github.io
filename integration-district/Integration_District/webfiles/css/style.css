@@ -1,361 +1,468 @@
+/* Table de contenue */
+/*                   */
 @font-face {
-  font-family: "SF-UI-text";
-  src: url("../../../IntegrationQovery1/src/typo/sfuitext-light-webfont.woff2") format("woff2"), url("../../../IntegrationQovery1/src/typo/sfuitext-light-webfont.woff") format("woff");
+  font-family: "icomoon";
+  src: url("../../../Integration_District/src/font/icomoon.eot");
+  src: url("../../../Integration_District/src/font/icomoon.eot") format("embedded-opentype"), url("../../../Integration_District/src/font/icomoon.ttf") format("truetype"), url("../../../Integration_District/src/font/icomoon.woff") format("woff"), url("../../../Integration_District/src/font/icomoon.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+[class^=icon-], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: "icomoon" !important;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-Lettre:before {
+  content: "\e900";
+  color: #34a58a;
+  font-size: 1rem;
+  padding-right: 1rem;
+}
+
+.icon-tel:before {
+  content: "\e901";
+  color: #34a58a;
+  font-size: 1.1rem;
+  padding-right: 1rem;
+}
+
+.icon-SigeSocial:before {
+  content: "\e902";
+  color: #fff;
+  padding-right: 1rem;
+}
+
+.icon-Lieu:before {
+  content: "\e903";
+  color: #34a58a;
+  font-size: 1rem;
+  padding-right: 1rem;
+}
+
+@font-face {
+  font-family: "Lato";
+  src: url("../../../Integration_District/src/font/lato-light-webfont.woff") format("woff"), url("../../../Integration_District/src/font/lato-light-webfont.woff2") format("woff2");
 }
 @font-face {
-  font-family: "HK-Grotesk";
-  src: url("../../../IntegrationQovery1/src/typo/hkgrotesk-light-webfont.woff2") format("woff2"), url("../../../IntegrationQovery1/src/typo/hkgrotesk-light-webfont.woff") format("woff");
+  font-family: "Montserrat";
+  src: url("../../../Integration_District/src/font/montserrat-VariableFont_wght.ttf") format("truetype");
+  src: url("../../../Integration_District/src/font/montserrat-VariableFont_wght-webfont.woff") format("woff"), url("../../../Integration_District/src/font/montserrat-VariableFont_wght-webfont.woff2") format("woff2");
 }
 * {
   margin: 0;
 }
 
 body {
-  background-color: #F9F9FD;
+  background-color: #F6F6F6;
 }
 
 header {
-  background-color: #151B2B;
-  max-width: 100%;
-  margin-bottom: 6rem;
-  font-family: SF-UI-text;
-}
-header .entete {
-  padding-bottom: 9rem;
-  max-width: 1440px;
-  color: #FFFFFF;
-  margin: auto;
-}
-header .entete img[src="./src/img/LogotypelogoQ.png"] {
-  padding-top: 2.56rem;
-  padding-left: 2rem;
+  margin-bottom: 5rem;
 }
 header h1 {
-  font-size: 3rem;
+  font-family: Montserrat;
+  padding: 5rem 0 2rem 0;
+  color: #34A58A;
+  text-transform: uppercase;
+  font-size: 40px;
 }
-header .inline {
-  max-width: 600px;
-  width: 100%;
+header nav {
+  max-width: 100%;
+  background-color: #345765;
 }
-header .ensemble {
-  display: flex;
-}
-header .ensemble ul {
-  display: flex;
-  align-items: center;
-  list-style: none;
-}
-header .ensemble ul li:first-of-type {
-  display: flex;
-  background-color: #c2c2c2;
-  color: black;
-  padding: 0.35rem 1.5rem;
-}
-header .ensemble ul li:last-of-type {
-  background-color: #FFFFFF;
-  color: black;
-  padding: 0.35rem 0.75rem;
-}
-header .ensemble p:last-of-type {
-  font-family: SF-UI-text;
-}
-header .ensemble p:first-of-type {
-  font-family: HK-Grotesk;
-}
-header .ensemble h1 {
-  font-family: HK-Grotesk;
-}
-header .bouton {
-  display: flex;
-  padding: 3rem 0;
-}
-header .bouton a {
-  margin-right: 1.5rem;
-  font-size: 14px;
-  text-decoration: none;
-  color: #FFFFFF;
-  padding: 0.5rem;
-  display: flex;
-  align-items: flex-end;
-}
-header .bouton a:first-of-type {
-  background-color: #454658;
-}
-header .bouton a:last-of-type {
-  background-color: #6578C0;
-}
-header .bouton a img {
-  padding-right: 1rem;
-}
-header img[src="./src/img/Group 225 1nav.png"] {
-  width: 100%;
-  padding-left: 5rem;
-}
-header section {
-  display: flex;
+header nav div {
   padding: 0 2rem;
-}
-header .inline {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-header .inline p:first-of-type {
-  padding-top: 1.5rem;
-  font-size: 1.5rem;
-}
-header .inline p:last-of-type {
-  padding-top: 1.5rem;
-  font-size: 1rem;
-}
-
-main {
-  padding: 1rem;
-}
-main h2, main h3 {
-  font-family: HK-Grotesk;
-}
-main p {
-  font-family: SF-UI-text;
-}
-main .work {
-  max-width: 853px;
-  display: flex;
-  flex-direction: column;
+  max-width: 1400px;
   margin: auto;
-  text-align: center;
 }
-main .work p {
-  padding-bottom: 2rem;
-}
-main .ensemble2 {
-  max-width: 853px;
-  margin: auto;
-  flex-direction: column;
+header nav div ul {
   display: flex;
-  position: relative;
+  justify-content: flex-end;
 }
-main .ensemble2 .usage {
-  padding: 6.56rem 0;
-  text-align: center;
+header nav div li {
+  display: flex;
 }
-main .ensemble2 img {
-  position: absolute;
-  z-index: -1;
-  top: 10%;
-  max-width: 100%;
-  left: 5%;
-}
-main .ensemble2 .code {
-  background-color: #FFFFFF;
-  padding: 1.5rem;
-  white-space: pre-line;
-}
-main .ensemble2 .code span {
-  background-color: #5D64D2;
-  border-radius: 3px;
+header nav div li a {
+  font-family: "Lato";
   color: #FFFFFF;
-  padding: 0.25rem 0.5rem;
-}
-main .ensemble2 .bouton {
-  padding: 3rem 0;
-}
-main .ensemble2 .bouton a {
-  margin-right: 1.5rem;
-  font-size: 14px;
   text-decoration: none;
-  color: #FFFFFF;
-  padding: 0.5rem;
+  padding: 2rem 1rem;
 }
-main .ensemble2 .bouton a:first-of-type {
-  background-color: #454658;
-}
-main .ensemble2 .bouton a:last-of-type {
-  background-color: #6578C0;
-}
-main .ensemble2 .bouton a img {
-  padding-right: 1rem;
-}
-main .art1,
-main .art2 {
-  padding-top: 7.8rem;
-  max-width: 1440px;
-  margin: auto;
-  display: flex;
-  align-items: center;
-}
-main .art1 .droite,
-main .art1 .gauche,
-main .art2 .droite,
-main .art2 .gauche {
-  margin: auto;
-  width: 408px;
-}
-main .art1 .droite p,
-main .art1 .gauche p,
-main .art2 .droite p,
-main .art2 .gauche p {
-  padding: 1.5rem 0 0.75rem 0;
-}
-main .art1 .droite a,
-main .art1 .gauche a,
-main .art2 .droite a,
-main .art2 .gauche a {
-  text-decoration: none;
-}
-main .leh3 {
-  max-width: 390px;
-  margin: auto;
-  padding: 16.8rem 0 16.6rem 0;
-  text-align: center;
-}
-
-footer {
-  background-color: #FFFFFF;
-}
-footer .texte {
-  padding-left: 2rem;
-  padding-top: 4rem;
-  width: 400px;
-}
-footer .texte p {
-  display: flex;
-  align-items: center;
-  padding: 2rem 0;
-}
-footer .texte p img {
-  width: 50px;
-  padding-right: 1rem;
-}
-footer .bandenoir {
-  background-color: #151B2B;
-  max-width: 100%;
-  height: 100px;
-}
-footer .img img {
-  filter: invert(0.5);
-  padding: 0.5rem;
-  border: solid 1px #b8b8b8;
-  width: 20px;
-  height: 20px;
-  margin-top: 1rem;
-}
-footer .ensemble3 {
-  display: flex;
-  justify-content: space-around;
-}
-footer .lien {
-  display: flex;
-}
-footer .lien div {
-  padding: 6rem 4rem;
-}
-footer .lien ul {
-  padding-left: 0;
-}
-footer .lien li {
-  list-style: none;
-  padding: 1rem 0;
-}
-footer .lien a {
-  text-decoration: none;
-  padding: 1rem 0;
-  color: #777881;
-}
-footer .lien a:hover {
+header nav div li a:hover {
   text-decoration: underline;
 }
-footer .ensemble {
-  display: flex;
-  padding-top: 1rem;
+header section {
+  padding: 0 2rem;
+  max-width: 1400px;
+  margin: auto;
 }
-footer .ensemble ul {
-  display: flex;
-  align-items: center;
-  list-style: none;
-  padding-inline-start: 0;
-}
-footer .ensemble ul li:first-of-type {
-  display: flex;
-  background-color: #c2c2c2;
-  color: black;
-  padding: 0.35rem 1.5rem;
-}
-footer .ensemble ul li:last-of-type {
-  background-color: #dddddd;
-  color: black;
-  padding: 0.37rem 0.75rem;
+header section img {
+  width: 100%;
 }
 
-.dernpa {
+/* MAIN            */
+main {
+  margin-bottom: 5rem;
+  padding: 0 2rem;
+}
+main h2, main h3 {
+  font-family: "Montserrat";
+  letter-spacing: 0.06rem;
+}
+main p {
+  font-family: "lato";
+}
+main .bloc {
+  max-width: 1400px;
+  margin: auto;
+  display: flex;
+  color: #6B5B54;
+  margin-bottom: 5rem;
+}
+main .bloc .cordonnee p {
+  color: #34A58A;
+}
+main .carte h2,
+main .presentation h2 {
+  padding-bottom: 2rem;
+}
+main section {
+  font-size: 20px;
+  margin-bottom: 2rem;
+}
+main section .presentation {
+  max-width: 755px;
+}
+main section .para,
+main section .pre {
+  max-width: 750px;
+  padding: 1rem 6rem 0 0;
+  margin-bottom: 0.5rem;
+}
+main section .pre {
+  white-space: pre-line;
+}
+main section iframe {
+  border: 10px #FFFFFF solid;
+  height: 90%;
+  width: 547px;
+}
+
+.top {
+  max-width: 1600px;
+  margin: auto;
+  background-color: #FFFFFF;
+}
+.top .titrebouton {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 1rem 2rem;
+  color: #6B5B54;
+}
+.top a {
+  font-family: Montserrat;
+  background-color: #34A58A;
+  padding: 1rem;
+  border-radius: 10px;
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+.premeactua,
+.dernactua {
+  background-color: #FFFFFF;
+  max-width: 1600px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+}
+.premeactua .arti,
+.dernactua .arti {
+  padding: 0 1rem;
+}
+.premeactua img,
+.dernactua img {
+  width: 330px;
+  height: 300px;
+  object-fit: cover;
+}
+.premeactua .lien,
+.dernactua .lien {
+  display: flex;
+  justify-content: flex-end;
+}
+.premeactua .date,
+.dernactua .date {
+  padding-bottom: 2rem;
+  color: #345765;
+}
+
+article {
+  position: relative;
   padding: 2rem;
-  border-top: #777881 solid 1px;
+  max-width: 1530px;
+  width: 50%;
+  margin: auto;
+  margin-top: 0.25rem;
+}
+article .texte {
+  position: relative;
+  height: 225px;
+  overflow: hidden;
+}
+article .texte::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 50%;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) -30%, rgb(255, 255, 255) 30%);
+  bottom: 0;
+  left: 0;
+}
+article a {
+  font-family: "Montserrat";
+  position: absolute;
+  text-decoration: none;
+  color: #34A58A;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+  padding: 2rem 0;
+  bottom: 0;
+  right: 5%;
+}
+article a::after {
+  content: "+";
+  font-family: sans-serif;
+  font-size: 2rem;
+  color: #34A58A;
+  padding: 0.3rem 0.7rem;
+  margin-left: 0.5rem;
+  border-radius: 100%;
+  background-color: #FFFFFF;
+  box-shadow: 0px 2px 8px rgb(173, 173, 173);
+}
+article img {
+  max-width: 100%;
+  object-fit: cover;
 }
 
-@media screen and (max-width: 1000px) {
+.droite {
+  display: flex;
+}
+
+.gauche {
+  display: flex;
+}
+
+/* FOOTER                */
+footer {
+  margin-top: 3rem;
+  width: 100%;
+  background-color: #345765;
+}
+footer section {
+  max-width: 1400px;
+  display: flex;
+  margin: auto;
+  justify-content: space-around;
+}
+footer section .icon-Lettre:before, footer section .icon-tel:before, footer section .icon-SigeSocial:before {
+  color: #FFFFFF;
+  font-size: 1.25rem;
+}
+footer section ul {
+  padding: 0;
+}
+footer section h3, footer section li, footer section a {
+  color: #FFFFFF;
+  padding: 1rem 0;
+}
+footer section h3 {
+  text-decoration: underline;
+  font-family: Montserrat;
+  letter-spacing: 0.06rem;
+}
+footer section li {
+  list-style: none;
+  font-family: "Lato";
+}
+footer section li a {
+  text-decoration: none;
+}
+footer section li a:hover {
+  text-decoration: underline;
+}
+footer section .logo img {
+  width: 120px;
+}
+footer p {
+  font-family: "Montserrat";
+  text-align: center;
+  color: #FFFFFF;
+  border-top: #FFFFFF solid 2px;
+  padding: 1rem;
+}
+
+@media screen and (max-width: 1050px) {
   header section {
     display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    padding: 0;
+  }
+  header section h1 {
+    font-size: 40px;
+    padding: 1rem;
+  }
+  header nav div {
+    max-width: 1000px;
+    margin: auto;
+  }
+  header nav div ul {
     flex-direction: column;
     align-items: center;
+    padding: 0;
   }
-  header img[src="./src/img/Group 225 1nav.png"] {
-    padding-left: 0;
+  header nav div ul a {
+    padding: 1rem 4rem;
   }
-  main .art1, main .art2 {
-    flex-direction: column;
-    text-align: center;
+  header nav div ul a:hover {
+    background-color: #517d8f;
   }
-  main .art1 article, main .art2 article {
-    padding-bottom: 5rem;
+  main .top {
+    max-width: 850px;
+  }
+  main .bloc {
+    max-width: 700px;
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+  main .bloc .presentation .para {
+    padding: 0;
+  }
+  main .bloc .cordonnee {
     display: flex;
-    flex-direction: column;
     align-items: center;
+    flex-direction: column;
   }
-  footer .ensemble {
-    margin-top: 2rem;
-    justify-content: center;
+  main .bloc .cordonnee p {
+    padding: 0;
   }
-  footer .texte p {
-    justify-content: center;
+  main .bloc iframe {
+    width: 700px;
+    max-width: 100%;
   }
-  footer .texte {
-    width: 50%;
+  main .premeactua,
+main .dernactua {
+    flex-direction: column;
+    max-width: 850px;
+  }
+  main .premeactua .droite,
+main .premeactua .gauche,
+main .dernactua .droite,
+main .dernactua .gauche {
     padding: 0 1rem;
+    flex-direction: column;
   }
-  footer .img {
-    display: flex;
-    justify-content: space-evenly;
+  main .premeactua .droite .arti,
+main .premeactua .gauche .arti,
+main .dernactua .droite .arti,
+main .dernactua .gauche .arti {
+    width: 90%;
   }
-  footer .ensemble3 {
+  main .premeactua img,
+main .dernactua img {
+    object-fit: cover;
+    width: 100%;
+    padding-bottom: 1rem;
+  }
+  main article {
+    width: 90%;
+    font-size: 15px;
+    margin-bottom: 2rem;
+  }
+  main article .texte:after {
+    display: none;
+  }
+  main .cordonnee {
+    text-align: center;
+  }
+  footer section {
     flex-direction: column;
     align-items: center;
   }
-  footer .lien {
-    flex-direction: column;
-    text-align: center;
+  footer section ul {
+    padding: 2rem 0;
   }
-  footer .lien div {
-    padding: 3rem 0;
+  footer section li,
+footer section h3 {
+    text-align: center;
+    padding: 0.5rem;
   }
 }
-@media screen and (max-width: 425px) {
-  header .inline {
-    flex-direction: column-reverse;
+@media screen and (max-width: 400px) {
+  header section h1 {
+    font-size: 1rem;
+    text-align: center;
   }
-  header .inline .bouton {
-    justify-content: center;
+  main {
+    padding: 0.5rem;
   }
-  header .inline h1 {
-    font-size: 2rem;
+  main .bloc .carte iframe {
+    border: none;
   }
-  main .ensemble2 {
-    left: 0;
+  main .bloc h2 {
+    font-size: 1rem;
   }
-  main .art1 .droite, main .art1 .gauche, main .art2 .droite, main .art2 .gauche {
+  main .bloc p {
+    text-align: justify;
+    padding: 0;
+    font-size: 0.75rem;
+  }
+  main .bloc .presentation {
+    text-align: center;
+  }
+  main .premeactua, main .dernactua {
+    max-width: 100%;
+  }
+  main .premeactua .arti, main .dernactua .arti {
+    padding: 0;
+  }
+  main .premeactua .droite, main .premeactua .gauche, main .dernactua .droite, main .dernactua .gauche {
+    padding: 0;
+  }
+  main article {
     width: 100%;
+    padding: 0;
   }
-  main .art1 .droite img, main .art1 .gauche img, main .art2 .droite img, main .art2 .gauche img {
-    max-width: 265px;
+  main article a {
+    font-size: 1rem;
+    right: 10%;
+    top: 95%;
+  }
+  main article a::after {
+    font-size: 1rem;
+    padding: 0.1rem 0.4rem;
+  }
+  main .top .titrebouton {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  main .top a {
+    padding: 0.5rem;
+    font-size: 0.75rem;
   }
 }
 
