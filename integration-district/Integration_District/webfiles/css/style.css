@@ -100,6 +100,7 @@ header nav {
   position: fixed;
   width: 100%;
   background-color: #345765;
+  z-index: 1;
 }
 header nav div {
   padding: 0 2rem;
@@ -154,7 +155,7 @@ main .bloc .cordonnee a {
   text-decoration: none;
   display: block;
   color: #34A58A;
-  max-width: 160px;
+  max-width: 200px;
 }
 main .bloc .cordonnee a:hover {
   text-decoration: underline;
@@ -427,6 +428,12 @@ footer p {
     max-width: 700px;
     flex-direction: column-reverse;
     align-items: center;
+  }
+  main .bloc .presentation {
+    text-align: center;
+  }
+  main .bloc .presentation .paragraphe {
+    padding-right: 0;
   }
   main .bloc .presentation .adressMail, main .bloc .presentation .telephone {
     padding: 0;
