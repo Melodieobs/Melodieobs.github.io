@@ -457,7 +457,7 @@ main .dernierActualite {
 main .premierActualite .articleDroite,
 main .dernierActualite .articleGauche,
 main .dernierActualite .articleDroite {
-    padding: 0 1rem;
+    padding: 3rem 1rem;
     flex-direction: column;
   }
   main .premierActualite .articleGauche .articleSansImage,
@@ -480,6 +480,13 @@ main .dernierActualite img {
   }
   main article .texte:after {
     display: none;
+  }
+  main article a {
+    bottom: -15%;
+  }
+  main article a::after {
+    font-size: 1.2rem;
+    padding: 0.2rem 0.5rem;
   }
   main .cordonnee {
     text-align: center;
@@ -528,17 +535,22 @@ main .dernierActualite img {
   main .premierActualite, main .dernierActualite {
     max-width: 100%;
   }
+  main .premierActualite img, main .dernierActualite img {
+    max-width: 95%;
+  }
   main .premierActualite .articleSansImage, main .dernierActualite .articleSansImage {
     padding: 0;
   }
   main .premierActualite .articleGauche, main .premierActualite .articleDroite, main .dernierActualite .articleGauche, main .dernierActualite .articleDroite {
     padding: 0;
+    align-items: center;
   }
   main .premierActualite .articleGauche h3, main .premierActualite .articleDroite h3, main .dernierActualite .articleGauche h3, main .dernierActualite .articleDroite h3 {
     font-size: 1.2rem;
   }
   main .premierActualite .articleGauche .texte, main .premierActualite .articleDroite .texte, main .dernierActualite .articleGauche .texte, main .dernierActualite .articleDroite .texte {
     font-size: 1rem;
+    padding-bottom: 2rem;
   }
   main .premierActualite .articleGauche .articleSansImage, main .premierActualite .articleDroite .articleSansImage, main .dernierActualite .articleGauche .articleSansImage, main .dernierActualite .articleDroite .articleSansImage {
     padding: 0 1rem;
