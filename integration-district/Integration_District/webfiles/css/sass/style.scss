@@ -1,5 +1,17 @@
 /* Table de contenue */
 /*                   */
+/* 0 | GLOBAL        */
+/* 1 | HEADER        */
+/* 2 | NAVBAR        */
+/* 3 | MAIN          */
+/* 4 | SECTION       */
+/* 5 | ARTICLE       */
+/* 6 | FOOTER        */
+
+/* 0 | GLOBAL        */
+$vert :#34A58A;
+$bleu : #345765;
+
 @font-face {
     font-family: 'icomoon';
     src:  url('../../../Integration_District/src/font/icomoon.eot');
@@ -28,13 +40,13 @@
   
   .icon-Lettre:before {
     content: "\e900";
-    color: #34a58a;
+    color: $vert;
     font-size: 1rem;
     padding-right: 1rem;
   }
   .icon-tel:before {
     content: "\e901";
-    color: #34a58a;
+    color: $vert;
     font-size: 1.1rem;
     padding-right: 1rem;
   }
@@ -45,7 +57,7 @@
   }
   .icon-Lieu:before {
     content: "\e903";
-    color: #34a58a;
+    color: $vert;
     font-size: 1rem;
     padding-right: 1rem;
   }
@@ -63,73 +75,76 @@
         url("../../../Integration_District/src/font/montserrat-VariableFont_wght-webfont.woff2") format("woff2");
 }
 
-* {
+*{
     margin: 0;
 }
 
-body {
+body{
     background-color: #F6F6F6;
 }
 
+h1, h2, h3{
+    font-family: 'Montserrat';
+    letter-spacing: 0.06em;
+}
+a{
+    letter-spacing: 0.06em;
+    font-weight: 400;
+}
+/* 1 | HEADER        */
 header {
     margin-bottom: 5rem;
-
-    h1 {
-        font-family: Montserrat;
-        padding: 5rem 0 2rem 0;
-        color: #34A58A;
+    h1{
+        padding: 6.5rem 0 3.5rem 0;
+        color: $vert;
         text-transform: uppercase;
-        font-size: 40px;
+        font-size: 2.5rem;
+        font-weight: 700;
     }
-
-    nav {
-        max-width: 100%;
-        background-color: #345765;
-
-        div {
+    /* 2 | NAVBAR        */
+    nav{
+        position: fixed;
+        width: 100%;
+        background-color: $bleu;
+        div{
             padding: 0 2rem;
             max-width: 1400px;
             margin: auto;
-
-            ul {
+            ul{
                 display: flex;
                 justify-content: flex-end
             }
-
             li {
                 display: flex;
-
-                a {
+                a{
                     font-family: 'Lato';
                     color: #FFFFFF;
                     text-decoration: none;
                     padding: 2rem 1rem;
-
+                    font-size: 1.25rem;
                     &:hover {
                         text-decoration: underline;
+                        background-color: #517d8f;
+                        border-radius: 20px;
+                        transition: background-color ,2s;
                     }
                 }
             }
         }
     }
-
+    /* 4 | SECTION       */
     section {
-        padding: 0 2rem;
+        padding: 7rem 2rem;
         max-width: 1400px;
         margin: auto;
-
         img {
             width: 100%;
         }
     }
 }
 
-/* MAIN            */
+/* 3 | MAIN          */
 main {
-    h2, h3{
-        font-family: 'Montserrat';
-        letter-spacing: 0.06rem;
-    }
     p {
         font-family: 'lato';
     }
@@ -139,46 +154,62 @@ main {
         max-width: 1400px;
         margin: auto;
         display: flex;
-        color: #6B5B54;
         margin-bottom: 5rem;
         .cordonnee{
-            p{
-                color: #34A58A;
+            a{
+                text-decoration: none;
+                display: block;
+                color: $vert ;
+                max-width: 160px;
+                &:hover{
+                    text-decoration: underline;
+                    text-underline-offset: 3px;
+                }
             }
         }
     }
-
+    .carte{
+        animation: slideDowndroite 5s;
+    }
+    .cordonnee, .presentation{
+        animation: slideDowngauche 5s;
+    }
     .carte h2,
     .presentation h2 {
-        padding-bottom: 2rem;
+        padding-bottom: 3.25rem;
     }
-
+    /* 4 | SECTION       */
     section{
         font-size: 20px;
-        margin-bottom: 2rem;
+        .paragraphe{
+            padding-right: 5.8rem;
+            font-weight: 300;
+            letter-spacing: 0.05em;
+            padding-bottom: 1rem ;
+        }
         .presentation {
             max-width: 755px;
         }
-        .para,
-        .pre {
+        .adressMail,
+        .adress, .telephone{
             max-width: 750px;
             padding: 1rem 6rem 0 0;
             margin-bottom: 0.50rem;
         }
-        .pre {
+        .adress{
             white-space: pre-line;
         }
-
         iframe {
             border: 10px #FFFFFF solid;
             height: 90%;
             width: 547px;
+            border-radius: 15px;
         }
     }
 
 }
 
-.top{
+.enteteDesSection{
     max-width: 1600px;
     margin: auto;
     background-color: #FFFFFF;
@@ -186,62 +217,69 @@ main {
         display: flex;
         justify-content: space-between;
         align-items: baseline;
-        padding: 1rem 2rem;
+        padding: 2.9rem 2rem;
         color: #6B5B54;
     }
-    a {
-        font-family: Montserrat;
-        background-color: #34A58A;
+    a{
+        font-family: 'Montserrat';
+        background-color: $vert;
         padding: 1rem;
         border-radius: 10px;
         color: #FFFFFF;
         text-decoration: none;
+        &:hover{
+            background-color: lighten($vert, 20%);
+        }
     }
 }
-
-.premeactua,
-.dernactua {
+.premierActualite,
+.dernierActualite {
     background-color: #FFFFFF;
     max-width: 1600px;
+    padding-bottom: 4rem;
     margin: auto;
     display: flex;
     justify-content: space-between;
     flex-direction: row-reverse;
-
-    .arti {
+    h3{
+        font-weight: 600;
+        font-size: 1.5rem;
+    }
+    .articleSansImage {
         padding: 0 1rem;
     }
-
-    img {
+    img{
         width: 330px;
         height: 300px;
         object-fit: cover;
     }
-
-    .lien {
+    .lien{
         display: flex;
         justify-content: flex-end;
     }
-
-    .date {
+    .date{
         padding-bottom: 2rem;
         color: #345765;
+        font-size: 0.87rem;
+    }
+    p{
+        font-size: 1.12rem;
+        font-weight: 400;
+        letter-spacing: 0.04em;
     }
 }
-
-article {
+/* 5 | ARTICLE       */
+article{
     position: relative;
-    padding: 2rem;
+    padding: 0 2rem;
     max-width: 1530px;
     width: 50%;
     margin: auto;
     margin-top: 0.25rem;
-
     .texte {
         position: relative;
-        height: 225px;
+        height: 50%;
         overflow: hidden;
-
         &::after {
             position: absolute;
             content: "";
@@ -252,51 +290,60 @@ article {
             left: 0;
         }
     }
-
-    a {
+    a{
         font-family: 'Montserrat';
         position: absolute;
         text-decoration: none;
-        color: #34A58A;
+        color: $vert;
         text-transform: uppercase;
         margin-bottom: 2rem;
         padding: 2rem 0;
-        bottom: 0;
-        right: 5%;
-
-        &::after {
+        bottom: -20%;
+        right: 4%;
+        &::after{
             content: "+";
             font-family: sans-serif;
-            font-size: 2rem;
-            color: #34A58A;
-            padding: 0.3rem 0.7rem;
+            font-size: 1.65rem;
+            color: $vert;
+            padding: 0.15rem 0.6rem;
             margin-left: 0.5rem;
             border-radius: 100%;
             background-color: #FFFFFF;
             box-shadow: 0px 2px 8px rgb(173, 173, 173);
         }
     }
-
-    img {
-        max-width: 100%;
+    img{
+        max-width: 60%;
         object-fit: cover;
+        animation: slideDown 5s;
+    }
+}
+.articleGauche{
+    img{
+        &:hover{
+            transform: scale(0.9) rotate(-10deg);
+            transition: transform ,3s;
+            }
+    }
+}
+.articleDroite{
+    img{
+        &:hover{
+            transform: scale(0.9) rotate(10deg);
+            transition: transform ,3s;
+            }
     }
 }
 
-.droite {
+.articleDroite, .articleGauche{
     display: flex;
 }
-
-.gauche {
-    display: flex;
-}
-
 /* FOOTER                */
 footer {
     margin-top: 3rem;
     width: 100%;
-    background-color: #345765;
-
+    background-color: $bleu;
+    /* 4 | SECTION       */
     section {
         max-width: 1400px;
         display: flex;
@@ -309,23 +356,21 @@ footer {
         ul {
             padding: 0;
         }
-
         h3, li, a{
             color: #FFFFFF;
             padding: 1rem 0;
         }
-
         h3 {
             text-decoration: underline;
-            font-family: Montserrat;
             letter-spacing: 0.06rem;
+            font-size: 1.37rem;
         }
-
         li {
             list-style: none;
             font-family: 'Lato' ;
             a {
                 text-decoration: none;
+                font-size: 1.25rem;
 
                 &:hover {
                     text-decoration: underline;
@@ -344,12 +389,17 @@ footer {
         color: #FFFFFF;
         border-top: #FFFFFF solid 2px;
         padding: 1rem;
+        letter-spacing: 0.06em;
+        font-weight: 300;
+        font-size: 1.25rem;
     }
-}
+}  
 
-@media screen and (max-width: 1050px) {
+@media screen and (max-width: 1050px){
+    /* 1 | HEADER        */
     header {
         section {
+            padding-top: 2rem;
             display: flex;
             flex-direction: column-reverse;
             align-items: center;
@@ -359,9 +409,13 @@ footer {
                 font-size: 40px;
                 padding: 1rem;
             }
+            img:hover{
+               animation: imageMouv 2s;
+            }
         }
-
+        /* 2 | NAVBAR        */
         nav {
+            position: initial;
             div {
                 max-width: 1000px;
                 margin: auto;
@@ -370,30 +424,25 @@ footer {
                     flex-direction: column;
                     align-items: center;
                     padding: 0;
-
                     a {
                         padding: 1rem 4rem;
-
-                        &:hover {
-                            background-color: #517d8f;
-                        }
+                        font-size: 1rem;
                     }
                 }
             }
         }
     }
-
+    /* 3 | MAIN          */
     main {
-        .top {
+        .enteteDesSection {
             max-width: 850px;
         }
-
-        .bloc {
+        .bloc{
             max-width: 700px;
             flex-direction: column-reverse;
             align-items: center;
             .presentation{
-                .para{
+                .adressMail, .telephone{
                     padding: 0;
                 }
             }
@@ -401,68 +450,63 @@ footer {
                 display: flex;
                 align-items: center;
                 flex-direction: column;
-                p{
-                    padding: 0;
+                padding-top: 2rem;
+                a{
+                    padding: 0.50rem;
+                    max-width: 300px;
                 }
             }
-
             iframe {
                 width: 700px;
                 max-width: 100%;
             }
+            .carte{
+                padding-bottom: 2rem;
+            }
         }
-
-        .premeactua,
-        .dernactua {
+        .premierActualite,
+        .dernierActualite {
             flex-direction: column;
             max-width: 850px;
-
-            .droite,
-            .gauche {
+            .articleGauche,
+            .articleDroite {
                 padding: 0 1rem;
                 flex-direction: column;
-
-                .arti {
+                .articleSansImage {
                     width: 90%;
                 }
             }
-
             img {
                 object-fit: cover;
+                max-width: 100%;
                 width: 100%;
                 padding-bottom: 1rem;
             }
-
         }
-
         article {
             width: 90%;
             font-size: 15px;
             margin-bottom: 2rem;
-
             .texte {
                 &:after {
                     display: none;
                 }
             }
         }
-
         .cordonnee {
             text-align: center;
         }
     }
-
-    footer {
-        section {
+/* 6 | FOOTER        */
+    footer{
+        section{
             flex-direction: column;
             align-items: center;
 
             ul {
                 padding: 2rem 0;
             }
-
-            li,
-            h3 {
+            li, h3{
                 text-align: center;
                 padding: 0.5rem;
             }
@@ -471,6 +515,8 @@ footer {
 }
 
 @media screen and(max-width: 400px){
+
+    /* 1 | HEADER        */
     header{
         section{
             h1{
@@ -479,7 +525,7 @@ footer {
             }
         }
     }
-    
+    /* 3 | MAIN          */
     main{
         padding: 0.5rem;
         .bloc{
@@ -499,30 +545,43 @@ footer {
         .presentation{
             text-align: center;
         }
+        .cordonnee{
+        font-size: 0.75rem;
+        }
     }
-    .premeactua, .dernactua{
+    .premierActualite, .dernierActualite{
         max-width: 100%;
-        .arti{
+        .articleSansImage{
             padding: 0;
         }
-        .droite, .gauche{
+        .articleGauche, .articleDroite{
             padding: 0;
+            h3{
+                font-size: 1.2rem;
+            }
+            .texte{
+                font-size: 1rem;
+            }
+            .articleSansImage{
+                padding: 0 1rem;
+            }
         }
     }
         article{
         width: 100%;
         padding: 0;
             a{
-                font-size: 1rem;
+                font-size: 0.75rem;
                 right: 10%;
-                top: 95%;
+                bottom: -15%;
                 &::after{
                     font-size: 1rem;
                     padding: 0.1rem 0.4rem;
                 }
             }
         }
-        .top{
+ /* 4 | SECTION       */       
+        .enteteDesSection{
             .titrebouton{
                 flex-direction: column;
                 align-items: center;
@@ -534,4 +593,56 @@ footer {
             }
         }
     }
+    /* 6 | FOOTER        */
+    footer{
+        section .icon-Lettre:before, section .icon-tel:before, section .icon-SigeSocial:before{
+            font-size: 0.75rem;
+        }
+        h3{
+            font-size: 1.5rem;
+        }
+         section li a{
+            font-size: 0.75rem;
+        }
+    }
+}
+@keyframes slideDown {
+    from{
+        transform: translateY(100px);
+        opacity: (0);
+    }
+    to{
+        transform: translateY(0);
+        opacity: (1);
+    }
+}
+@keyframes slideDowndroite{
+    from{
+        transform: translateX(300px);
+        opacity: (0);
+    }
+    to{
+        transform: translateX(0);
+        opacity: (1);
+    }
+}
+@keyframes slideDowngauche{
+    from{
+        transform: translateX(-300px);
+        opacity: (0);
+    }
+    to{
+        transform: translateX(0);
+        opacity: (1);
+    }
+}
+@keyframes imageMouv {
+    5%{ transform: rotate(-5deg);}
+    10%{ transform: rotate(-10deg);}
+    25%{ transform: rotate(-5deg);}
+    50%{ transform: rotate(0deg);}
+    75%{ transform: rotate(5deg);}
+    80%{ transform: rotate(10deg);}
+    90%{ transform: rotate(5deg);}
+    100%{ transform: rotate(0deg);}
 }

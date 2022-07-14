@@ -1,5 +1,13 @@
 /* Table de contenue */
 /*                   */
+/* 0 | GLOBAL        */
+/* 1 | HEADER        */
+/* 2 | NAVBAR        */
+/* 3 | MAIN          */
+/* 4 | SECTION       */
+/* 5 | ARTICLE       */
+/* 6 | FOOTER        */
+/* 0 | GLOBAL        */
 @font-face {
   font-family: "icomoon";
   src: url("../../../Integration_District/src/font/icomoon.eot");
@@ -23,14 +31,14 @@
 
 .icon-Lettre:before {
   content: "\e900";
-  color: #34a58a;
+  color: #34A58A;
   font-size: 1rem;
   padding-right: 1rem;
 }
 
 .icon-tel:before {
   content: "\e901";
-  color: #34a58a;
+  color: #34A58A;
   font-size: 1.1rem;
   padding-right: 1rem;
 }
@@ -43,7 +51,7 @@
 
 .icon-Lieu:before {
   content: "\e903";
-  color: #34a58a;
+  color: #34A58A;
   font-size: 1rem;
   padding-right: 1rem;
 }
@@ -65,18 +73,32 @@ body {
   background-color: #F6F6F6;
 }
 
+h1, h2, h3 {
+  font-family: "Montserrat";
+  letter-spacing: 0.06em;
+}
+
+a {
+  letter-spacing: 0.06em;
+  font-weight: 400;
+}
+
+/* 1 | HEADER        */
 header {
   margin-bottom: 5rem;
+  /* 2 | NAVBAR        */
+  /* 4 | SECTION       */
 }
 header h1 {
-  font-family: Montserrat;
-  padding: 5rem 0 2rem 0;
+  padding: 6.5rem 0 3.5rem 0;
   color: #34A58A;
   text-transform: uppercase;
-  font-size: 40px;
+  font-size: 2.5rem;
+  font-weight: 700;
 }
 header nav {
-  max-width: 100%;
+  position: fixed;
+  width: 100%;
   background-color: #345765;
 }
 header nav div {
@@ -96,12 +118,16 @@ header nav div li a {
   color: #FFFFFF;
   text-decoration: none;
   padding: 2rem 1rem;
+  font-size: 1.25rem;
 }
 header nav div li a:hover {
   text-decoration: underline;
+  background-color: #517d8f;
+  border-radius: 20px;
+  transition: background-color, 2s;
 }
 header section {
-  padding: 0 2rem;
+  padding: 7rem 2rem;
   max-width: 1400px;
   margin: auto;
 }
@@ -109,14 +135,11 @@ header section img {
   width: 100%;
 }
 
-/* MAIN            */
+/* 3 | MAIN          */
 main {
   margin-bottom: 5rem;
   padding: 0 2rem;
-}
-main h2, main h3 {
-  font-family: "Montserrat";
-  letter-spacing: 0.06rem;
+  /* 4 | SECTION       */
 }
 main p {
   font-family: "lato";
@@ -125,92 +148,127 @@ main .bloc {
   max-width: 1400px;
   margin: auto;
   display: flex;
-  color: #6B5B54;
   margin-bottom: 5rem;
 }
-main .bloc .cordonnee p {
+main .bloc .cordonnee a {
+  text-decoration: none;
+  display: block;
   color: #34A58A;
+  max-width: 160px;
+}
+main .bloc .cordonnee a:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+main .carte {
+  animation: slideDowndroite 5s;
+}
+main .cordonnee, main .presentation {
+  animation: slideDowngauche 5s;
 }
 main .carte h2,
 main .presentation h2 {
-  padding-bottom: 2rem;
+  padding-bottom: 3.25rem;
 }
 main section {
   font-size: 20px;
-  margin-bottom: 2rem;
+}
+main section .paragraphe {
+  padding-right: 5.8rem;
+  font-weight: 300;
+  letter-spacing: 0.05em;
+  padding-bottom: 1rem;
 }
 main section .presentation {
   max-width: 755px;
 }
-main section .para,
-main section .pre {
+main section .adressMail,
+main section .adress, main section .telephone {
   max-width: 750px;
   padding: 1rem 6rem 0 0;
   margin-bottom: 0.5rem;
 }
-main section .pre {
+main section .adress {
   white-space: pre-line;
 }
 main section iframe {
   border: 10px #FFFFFF solid;
   height: 90%;
   width: 547px;
+  border-radius: 15px;
 }
 
-.top {
+.enteteDesSection {
   max-width: 1600px;
   margin: auto;
   background-color: #FFFFFF;
 }
-.top .titrebouton {
+.enteteDesSection .titrebouton {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  padding: 1rem 2rem;
+  padding: 2.9rem 2rem;
   color: #6B5B54;
 }
-.top a {
-  font-family: Montserrat;
+.enteteDesSection a {
+  font-family: "Montserrat";
   background-color: #34A58A;
   padding: 1rem;
   border-radius: 10px;
   color: #FFFFFF;
   text-decoration: none;
 }
+.enteteDesSection a:hover {
+  background-color: #6ed1b9;
+}
 
-.premeactua,
-.dernactua {
+.premierActualite,
+.dernierActualite {
   background-color: #FFFFFF;
   max-width: 1600px;
+  padding-bottom: 4rem;
   margin: auto;
   display: flex;
   justify-content: space-between;
   flex-direction: row-reverse;
 }
-.premeactua .arti,
-.dernactua .arti {
+.premierActualite h3,
+.dernierActualite h3 {
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+.premierActualite .articleSansImage,
+.dernierActualite .articleSansImage {
   padding: 0 1rem;
 }
-.premeactua img,
-.dernactua img {
+.premierActualite img,
+.dernierActualite img {
   width: 330px;
   height: 300px;
   object-fit: cover;
 }
-.premeactua .lien,
-.dernactua .lien {
+.premierActualite .lien,
+.dernierActualite .lien {
   display: flex;
   justify-content: flex-end;
 }
-.premeactua .date,
-.dernactua .date {
+.premierActualite .date,
+.dernierActualite .date {
   padding-bottom: 2rem;
   color: #345765;
+  font-size: 0.87rem;
+}
+.premierActualite p,
+.dernierActualite p {
+  font-size: 1.12rem;
+  font-weight: 400;
+  letter-spacing: 0.04em;
 }
 
+/* 5 | ARTICLE       */
 article {
   position: relative;
-  padding: 2rem;
+  padding: 0 2rem;
   max-width: 1530px;
   width: 50%;
   margin: auto;
@@ -218,7 +276,7 @@ article {
 }
 article .texte {
   position: relative;
-  height: 225px;
+  height: 50%;
   overflow: hidden;
 }
 article .texte::after {
@@ -238,30 +296,37 @@ article a {
   text-transform: uppercase;
   margin-bottom: 2rem;
   padding: 2rem 0;
-  bottom: 0;
-  right: 5%;
+  bottom: -20%;
+  right: 4%;
 }
 article a::after {
   content: "+";
   font-family: sans-serif;
-  font-size: 2rem;
+  font-size: 1.65rem;
   color: #34A58A;
-  padding: 0.3rem 0.7rem;
+  padding: 0.15rem 0.6rem;
   margin-left: 0.5rem;
   border-radius: 100%;
   background-color: #FFFFFF;
   box-shadow: 0px 2px 8px rgb(173, 173, 173);
 }
 article img {
-  max-width: 100%;
+  max-width: 60%;
   object-fit: cover;
+  animation: slideDown 5s;
 }
 
-.droite {
-  display: flex;
+.articleGauche img:hover {
+  transform: scale(0.9) rotate(-10deg);
+  transition: transform, 3s;
 }
 
-.gauche {
+.articleDroite img:hover {
+  transform: scale(0.9) rotate(10deg);
+  transition: transform, 3s;
+}
+
+.articleDroite, .articleGauche {
   display: flex;
 }
 
@@ -270,6 +335,7 @@ footer {
   margin-top: 3rem;
   width: 100%;
   background-color: #345765;
+  /* 4 | SECTION       */
 }
 footer section {
   max-width: 1400px;
@@ -290,8 +356,8 @@ footer section h3, footer section li, footer section a {
 }
 footer section h3 {
   text-decoration: underline;
-  font-family: Montserrat;
   letter-spacing: 0.06rem;
+  font-size: 1.37rem;
 }
 footer section li {
   list-style: none;
@@ -299,6 +365,7 @@ footer section li {
 }
 footer section li a {
   text-decoration: none;
+  font-size: 1.25rem;
 }
 footer section li a:hover {
   text-decoration: underline;
@@ -312,10 +379,18 @@ footer p {
   color: #FFFFFF;
   border-top: #FFFFFF solid 2px;
   padding: 1rem;
+  letter-spacing: 0.06em;
+  font-weight: 300;
+  font-size: 1.25rem;
 }
 
 @media screen and (max-width: 1050px) {
+  /* 1 | HEADER        */
+  header {
+    /* 2 | NAVBAR        */
+  }
   header section {
+    padding-top: 2rem;
     display: flex;
     flex-direction: column-reverse;
     align-items: center;
@@ -324,6 +399,12 @@ footer p {
   header section h1 {
     font-size: 40px;
     padding: 1rem;
+  }
+  header section img:hover {
+    animation: imageMouv 2s;
+  }
+  header nav {
+    position: initial;
   }
   header nav div {
     max-width: 1000px;
@@ -336,11 +417,10 @@ footer p {
   }
   header nav div ul a {
     padding: 1rem 4rem;
+    font-size: 1rem;
   }
-  header nav div ul a:hover {
-    background-color: #517d8f;
-  }
-  main .top {
+  /* 3 | MAIN          */
+  main .enteteDesSection {
     max-width: 850px;
   }
   main .bloc {
@@ -348,42 +428,48 @@ footer p {
     flex-direction: column-reverse;
     align-items: center;
   }
-  main .bloc .presentation .para {
+  main .bloc .presentation .adressMail, main .bloc .presentation .telephone {
     padding: 0;
   }
   main .bloc .cordonnee {
     display: flex;
     align-items: center;
     flex-direction: column;
+    padding-top: 2rem;
   }
-  main .bloc .cordonnee p {
-    padding: 0;
+  main .bloc .cordonnee a {
+    padding: 0.5rem;
+    max-width: 300px;
   }
   main .bloc iframe {
     width: 700px;
     max-width: 100%;
   }
-  main .premeactua,
-main .dernactua {
+  main .bloc .carte {
+    padding-bottom: 2rem;
+  }
+  main .premierActualite,
+main .dernierActualite {
     flex-direction: column;
     max-width: 850px;
   }
-  main .premeactua .droite,
-main .premeactua .gauche,
-main .dernactua .droite,
-main .dernactua .gauche {
+  main .premierActualite .articleGauche,
+main .premierActualite .articleDroite,
+main .dernierActualite .articleGauche,
+main .dernierActualite .articleDroite {
     padding: 0 1rem;
     flex-direction: column;
   }
-  main .premeactua .droite .arti,
-main .premeactua .gauche .arti,
-main .dernactua .droite .arti,
-main .dernactua .gauche .arti {
+  main .premierActualite .articleGauche .articleSansImage,
+main .premierActualite .articleDroite .articleSansImage,
+main .dernierActualite .articleGauche .articleSansImage,
+main .dernierActualite .articleDroite .articleSansImage {
     width: 90%;
   }
-  main .premeactua img,
-main .dernactua img {
+  main .premierActualite img,
+main .dernierActualite img {
     object-fit: cover;
+    max-width: 100%;
     width: 100%;
     padding-bottom: 1rem;
   }
@@ -398,6 +484,7 @@ main .dernactua img {
   main .cordonnee {
     text-align: center;
   }
+  /* 6 | FOOTER        */
   footer section {
     flex-direction: column;
     align-items: center;
@@ -405,19 +492,21 @@ main .dernactua img {
   footer section ul {
     padding: 2rem 0;
   }
-  footer section li,
-footer section h3 {
+  footer section li, footer section h3 {
     text-align: center;
     padding: 0.5rem;
   }
 }
 @media screen and (max-width: 400px) {
+  /* 1 | HEADER        */
   header section h1 {
     font-size: 1rem;
     text-align: center;
   }
+  /* 3 | MAIN          */
   main {
     padding: 0.5rem;
+    /* 4 | SECTION       */
   }
   main .bloc .carte iframe {
     border: none;
@@ -433,36 +522,114 @@ footer section h3 {
   main .bloc .presentation {
     text-align: center;
   }
-  main .premeactua, main .dernactua {
+  main .bloc .cordonnee {
+    font-size: 0.75rem;
+  }
+  main .premierActualite, main .dernierActualite {
     max-width: 100%;
   }
-  main .premeactua .arti, main .dernactua .arti {
+  main .premierActualite .articleSansImage, main .dernierActualite .articleSansImage {
     padding: 0;
   }
-  main .premeactua .droite, main .premeactua .gauche, main .dernactua .droite, main .dernactua .gauche {
+  main .premierActualite .articleGauche, main .premierActualite .articleDroite, main .dernierActualite .articleGauche, main .dernierActualite .articleDroite {
     padding: 0;
+  }
+  main .premierActualite .articleGauche h3, main .premierActualite .articleDroite h3, main .dernierActualite .articleGauche h3, main .dernierActualite .articleDroite h3 {
+    font-size: 1.2rem;
+  }
+  main .premierActualite .articleGauche .texte, main .premierActualite .articleDroite .texte, main .dernierActualite .articleGauche .texte, main .dernierActualite .articleDroite .texte {
+    font-size: 1rem;
+  }
+  main .premierActualite .articleGauche .articleSansImage, main .premierActualite .articleDroite .articleSansImage, main .dernierActualite .articleGauche .articleSansImage, main .dernierActualite .articleDroite .articleSansImage {
+    padding: 0 1rem;
   }
   main article {
     width: 100%;
     padding: 0;
   }
   main article a {
-    font-size: 1rem;
+    font-size: 0.75rem;
     right: 10%;
-    top: 95%;
+    bottom: -15%;
   }
   main article a::after {
     font-size: 1rem;
     padding: 0.1rem 0.4rem;
   }
-  main .top .titrebouton {
+  main .enteteDesSection .titrebouton {
     flex-direction: column;
     align-items: center;
     text-align: center;
   }
-  main .top a {
+  main .enteteDesSection a {
     padding: 0.5rem;
     font-size: 0.75rem;
+  }
+  /* 6 | FOOTER        */
+  footer section .icon-Lettre:before, footer section .icon-tel:before, footer section .icon-SigeSocial:before {
+    font-size: 0.75rem;
+  }
+  footer h3 {
+    font-size: 1.5rem;
+  }
+  footer section li a {
+    font-size: 0.75rem;
+  }
+}
+@keyframes slideDown {
+  from {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes slideDowndroite {
+  from {
+    transform: translateX(300px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes slideDowngauche {
+  from {
+    transform: translateX(-300px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes imageMouv {
+  5% {
+    transform: rotate(-5deg);
+  }
+  10% {
+    transform: rotate(-10deg);
+  }
+  25% {
+    transform: rotate(-5deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  75% {
+    transform: rotate(5deg);
+  }
+  80% {
+    transform: rotate(10deg);
+  }
+  90% {
+    transform: rotate(5deg);
+  }
+  100% {
+    transform: rotate(0deg);
   }
 }
 
