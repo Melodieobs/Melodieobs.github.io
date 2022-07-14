@@ -1,0 +1,509 @@
+/* Table des contenue */
+/*                    */
+/* 0| GLOBAL          */
+/* 1| HEADER          */
+/* 2| NAVBAR          */
+/* 3| MAIN            */
+/* 4| ARTICLE         */
+/* 5| FOOTER          */
+/* 6| MEDIA QUERY     */
+/* 0| GLOBAL          */
+@font-face {
+  font-family: "icomoon";
+  src: url("../../../IntegrationQovery1/src/font/icomoon.eot");
+  src: url("../../../IntegrationQovery1/src/font/icomoon.eot") format("embedded-opentype"), url("../../../IntegrationQovery1/src/font/icomoon.ttf") format("truetype"), url("../../../IntegrationQovery1/src/font/icomoon.woff") format("woff"), url("../../../IntegrationQovery1/src/font/icomoon.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+@font-face {
+  font-family: "SF-UI-text";
+  src: url("../../../IntegrationQovery1/src/font/sfuitext-light-webfont.woff2") format("woff2"), url("../../../IntegrationQovery1/src/font/sfuitext-light-webfont.woff") format("woff");
+}
+@font-face {
+  font-family: "HK-Grotesk";
+  src: url("../../../IntegrationQovery1/src/font/hkgrotesk-light-webfont.woff2") format("woff2"), url("../../../IntegrationQovery1/src/font/hkgrotesk-light-webfont.woff") format("woff");
+}
+[class^=icon-], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: "icomoon" !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-discord:before {
+  content: "\e900";
+  color: #fff;
+}
+
+.icon-github:before {
+  content: "\e901";
+  color: #fff;
+}
+
+.icon-Twitter:before {
+  content: "\e902";
+  color: #1da1f2;
+}
+
+.icon-qovery .path1:before {
+  content: "\e903";
+  color: rgb(162, 153, 255);
+}
+
+.icon-qovery .path2:before {
+  content: "\e904";
+  margin-left: -1.005859375em;
+  color: rgb(115, 102, 255);
+}
+
+.icon-qovery .path3:before {
+  content: "\e905";
+  margin-left: -1.005859375em;
+  color: rgb(115, 102, 255);
+}
+
+.icon-qovery .path4:before {
+  content: "\e906";
+  margin-left: -1.005859375em;
+  color: rgb(82, 25, 255);
+}
+
+.icon-qovery .path5:before {
+  content: "\e907";
+  margin-left: -1.005859375em;
+  color: rgb(162, 153, 255);
+}
+
+.icon-qovery .path6:before {
+  content: "\e908";
+  margin-left: -1.005859375em;
+  color: rgb(82, 25, 255);
+}
+
+.icon-qovery .path7:before {
+  content: "\e909";
+  margin-left: -1.005859375em;
+  color: rgb(115, 102, 255);
+}
+
+.icon-qovery .path8:before {
+  content: "\e90a";
+  margin-left: -1.005859375em;
+  color: rgb(0, 0, 0);
+}
+
+.icon-qovery .path9:before {
+  content: "\e90b";
+  margin-left: -1.005859375em;
+  color: rgb(0, 0, 0);
+}
+
+.icon-LinkedIn .path1:before {
+  content: "\e90c";
+  color: rgb(0, 126, 187);
+}
+
+.icon-LinkedIn .path2:before {
+  content: "\e90d";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+
+* {
+  margin: 0;
+}
+
+body {
+  background-color: #F9F9FD;
+}
+
+/* 1| HEADER          */
+header {
+  background-color: #151B2B;
+  max-width: 100%;
+  margin-bottom: 6rem;
+  font-family: SF-UI-text;
+  /* 2| NAVBAR          */
+}
+header .entete {
+  padding-bottom: 6rem;
+  max-width: 1440px;
+  color: #FFFFFF;
+  margin: auto;
+}
+header .entete img[src="./src/img/LogotypelogoQ.png"] {
+  padding-top: 2.56rem;
+  padding-left: 2rem;
+}
+header h1 {
+  font-size: 3rem;
+}
+header .inline {
+  max-width: 600px;
+  width: 100%;
+}
+header .ensemble {
+  display: flex;
+  align-items: baseline;
+}
+header .ensemble ul {
+  padding: 0 1rem;
+  display: flex;
+  list-style: none;
+}
+header .ensemble ul li:first-of-type {
+  display: flex;
+  background-color: #c2c2c2;
+  color: black;
+  padding: 0.35rem 0.5rem;
+  border-bottom-left-radius: 3px;
+  border-top-left-radius: 3px;
+}
+header .ensemble ul li:last-of-type {
+  background-color: #FFFFFF;
+  color: black;
+  padding: 0.35rem 0.55rem;
+  border-bottom-right-radius: 3px;
+  border-top-right-radius: 3px;
+}
+header .ensemble ul img {
+  padding-right: 0.5rem;
+  object-fit: contain;
+  filter: invert(0.9);
+}
+header .ensemble p:last-of-type {
+  font-family: SF-UI-text;
+}
+header .ensemble p:first-of-type {
+  font-family: HK-Grotesk;
+}
+header .ensemble h1 {
+  font-family: HK-Grotesk;
+}
+header .bouton {
+  display: flex;
+  padding: 3rem 0;
+}
+header .bouton a {
+  margin-right: 1.5rem;
+  font-size: 14px;
+  text-decoration: none;
+  color: #FFFFFF;
+  padding: 0.5rem;
+  display: flex;
+  align-items: flex-end;
+  border-radius: 3px;
+}
+header .bouton a:first-of-type {
+  background-color: #454658;
+}
+header .bouton a:last-of-type {
+  background-color: #6578C0;
+}
+header .bouton a img {
+  padding-right: 1rem;
+}
+header img[src="./src/img/Group 225 1nav.png"] {
+  width: 100%;
+  padding-left: 5rem;
+}
+header section {
+  display: flex;
+  padding: 0 2rem;
+}
+header .inline {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+header .inline p:first-of-type {
+  padding-top: 1.5rem;
+  font-size: 1.5rem;
+}
+header .inline p:last-of-type {
+  padding-top: 1.5rem;
+  font-size: 1rem;
+}
+
+/* 3| MAIN            */
+main {
+  padding: 1rem;
+  /* 4| ARTICLE         */
+}
+main h2:nth-of-type(1) {
+  padding-bottom: 1rem;
+}
+main h2, main h3 {
+  font-family: HK-Grotesk;
+}
+main p {
+  font-family: SF-UI-text;
+}
+main .work {
+  max-width: 853px;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  text-align: center;
+}
+main .work p {
+  padding-bottom: 2rem;
+}
+main .work h2 {
+  padding-bottom: 1.5rem;
+}
+main .ensemble2 {
+  max-width: 853px;
+  margin: auto;
+  flex-direction: column;
+  display: flex;
+  position: relative;
+}
+main .ensemble2 .usage {
+  padding: 6.56rem 0;
+  text-align: center;
+}
+main .ensemble2 img[src="./src/img/bgarrier plan.png"] {
+  position: absolute;
+  z-index: -1;
+  top: 10%;
+  max-width: 100%;
+  left: 5%;
+}
+main .ensemble2 .code {
+  background-color: #FFFFFF;
+  padding: 1.5rem;
+  white-space: pre-line;
+}
+main .ensemble2 .code span {
+  background-color: #5D64D2;
+  border-radius: 3px;
+  color: #FFFFFF;
+  padding: 0.25rem 0.5rem;
+}
+main .ensemble2 .bouton {
+  display: flex;
+  justify-content: center;
+  padding: 3rem 0;
+}
+main .ensemble2 .bouton a {
+  display: flex;
+  align-items: flex-end;
+  margin-right: 1.5rem;
+  font-size: 14px;
+  text-decoration: none;
+  color: #FFFFFF;
+  padding: 0.5rem;
+  border-radius: 3px;
+}
+main .ensemble2 .bouton a:first-of-type {
+  background-color: #454658;
+}
+main .ensemble2 .bouton a:last-of-type {
+  background-color: #6578C0;
+}
+main .ensemble2 .bouton a img {
+  padding: 0 0.5rem;
+}
+main .art1 {
+  padding-top: 6.3rem;
+}
+main .art2 {
+  padding-top: 4.1rem;
+}
+main .art1,
+main .art2 {
+  max-width: 1440px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+}
+main .art1 .droite,
+main .art1 .gauche,
+main .art2 .droite,
+main .art2 .gauche {
+  margin: auto;
+  width: 408px;
+}
+main .art1 .droite p,
+main .art1 .gauche p,
+main .art2 .droite p,
+main .art2 .gauche p {
+  padding: 1.5rem 0 0.75rem 0;
+}
+main .art1 .droite a,
+main .art1 .gauche a,
+main .art2 .droite a,
+main .art2 .gauche a {
+  text-decoration: none;
+}
+main .leh3 {
+  max-width: 390px;
+  margin: auto;
+  padding: 10.4rem 0 16.6rem 0;
+  text-align: center;
+}
+
+/* 5| FOOTER          */
+footer {
+  background-color: #FFFFFF;
+}
+footer .texte {
+  padding-left: 2rem;
+  padding-top: 4rem;
+  width: 400px;
+}
+footer .texte p {
+  display: flex;
+  align-items: center;
+  padding: 2rem 0;
+}
+footer .texte p img {
+  width: 50px;
+  padding-right: 1rem;
+}
+footer .bandenoir {
+  background-color: #151B2B;
+  max-width: 100%;
+  height: 100px;
+}
+footer .img img {
+  filter: invert(0.5);
+  padding: 0.5rem;
+  border: solid 1px #b8b8b8;
+  width: 20px;
+  height: 20px;
+  margin-top: 1rem;
+}
+footer .ensemble3 {
+  display: flex;
+  justify-content: space-around;
+}
+footer .lien {
+  display: flex;
+}
+footer .lien div {
+  padding: 6rem 4rem;
+}
+footer .lien ul {
+  padding-left: 0;
+}
+footer .lien li {
+  list-style: none;
+  padding: 1rem 0;
+}
+footer .lien a {
+  text-decoration: none;
+  padding: 1rem 0;
+  color: #777881;
+}
+footer .lien a:hover {
+  text-decoration: underline;
+}
+footer .ensemble {
+  display: flex;
+  padding-top: 1rem;
+}
+footer .ensemble ul {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  padding-inline-start: 0;
+}
+footer .ensemble ul li:first-of-type {
+  display: flex;
+  background-color: #c2c2c2;
+  color: black;
+  padding: 0.35rem 1.5rem;
+  border-radius: 3px;
+}
+footer .ensemble ul li:last-of-type {
+  background-color: #dddddd;
+  color: black;
+  padding: 0.38rem 0.75rem;
+}
+
+.dernpa {
+  padding: 2rem;
+  border-top: #777881 solid 1px;
+}
+
+/* 6| MEDIA QUERY     */
+@media screen and (max-width: 1000px) {
+  /* 1| HEADER          */
+  header section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  header img[src="./src/img/Group 225 1nav.png"] {
+    padding-left: 0;
+  }
+  main .art1, main .art2 {
+    flex-direction: column;
+    text-align: center;
+  }
+  main .art1 article, main .art2 article {
+    padding-bottom: 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  footer .ensemble {
+    margin-top: 2rem;
+    justify-content: center;
+  }
+  footer .texte p {
+    justify-content: center;
+  }
+  footer .texte {
+    width: 50%;
+    padding: 0 1rem;
+  }
+  footer .img {
+    display: flex;
+    justify-content: space-evenly;
+  }
+  footer .ensemble3 {
+    flex-direction: column;
+    align-items: center;
+  }
+  footer .lien {
+    flex-direction: column;
+    text-align: center;
+  }
+  footer .lien div {
+    padding: 3rem 0;
+  }
+}
+/* 6| MEDIA QUERY     */
+@media screen and (max-width: 425px) {
+  header .inline {
+    flex-direction: column-reverse;
+  }
+  header .inline .bouton {
+    justify-content: center;
+  }
+  header .inline h1 {
+    font-size: 2rem;
+  }
+  main .ensemble2 {
+    left: 0;
+  }
+  main .art1 .droite, main .art1 .gauche, main .art2 .droite, main .art2 .gauche {
+    width: 100%;
+  }
+  main .art1 .droite img, main .art1 .gauche img, main .art2 .droite img, main .art2 .gauche img {
+    max-width: 265px;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
