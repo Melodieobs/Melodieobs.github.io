@@ -85,7 +85,6 @@ a {
 
 /* 1 | HEADER        */
 header {
-  margin-bottom: 5rem;
   /* 2 | NAVBAR        */
   /* 4 | SECTION       */
 }
@@ -149,7 +148,7 @@ main .bloc {
   max-width: 1400px;
   margin: auto;
   display: flex;
-  margin-bottom: 5rem;
+  padding-bottom: 11.3rem;
 }
 main .bloc .cordonnee a {
   text-decoration: none;
@@ -399,7 +398,7 @@ footer p {
   }
   header section h1 {
     font-size: 40px;
-    padding: 1rem;
+    padding: 1rem 0 7rem 0;
   }
   header section img:hover {
     animation: imageMouv 2s;
@@ -453,6 +452,7 @@ footer p {
     max-width: 100%;
   }
   main .bloc .carte {
+    text-align: center;
     padding-bottom: 2rem;
   }
   main .premierActualite,
