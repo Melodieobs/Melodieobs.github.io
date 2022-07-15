@@ -62,8 +62,7 @@
 }
 @font-face {
   font-family: "Montserrat";
-  src: url("../../../Integration_District/src/font/montserrat-VariableFont_wght.ttf") format("truetype");
-  src: url("../../../Integration_District/src/font/montserrat-Variablefont_wght-webfont.woff") format("woff"), url("../../../Integration_District/src/font/montserrat-Variablefont_wght-webfont.woff2") format("woff2");
+  src: url("../../../Integration_District/src/font/montserrat-variableFont_wght.ttf") format("truetype"), url("../../../Integration_District/src/font/montserrat-variablefont_wght-webfont.woff") format("woff"), url("../../../Integration_District/src/font/montserrat-variablefont_wght-webfont.woff2") format("woff2");
 }
 * {
   margin: 0;
@@ -398,7 +397,8 @@ footer p {
   }
   header section h1 {
     font-size: 40px;
-    padding: 1rem 0 7rem 0;
+    padding: 1rem 1rem 7rem 1rem;
+    text-align: center;
   }
   header section img:hover {
     animation: imageMouv 2s;
@@ -514,7 +514,7 @@ main .dernierActualite img {
 @media screen and (max-width: 400px) {
   /* 1 | HEADER        */
   header section h1 {
-    font-size: 1rem;
+    font-size: 1.25rem;
     text-align: center;
   }
   /* 3 | MAIN          */
